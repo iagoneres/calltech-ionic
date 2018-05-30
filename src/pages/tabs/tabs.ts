@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component }    from '@angular/core';
 
-import { HomePage } from '../home/home';
-import {ExplorerPage} from "../explorer/explorer";
-import {ChatPage} from "../chat/chat";
-import {ProfilePage} from "../profile/profile";
+import { HomePage }     from '../home/home';
+import { ExplorerPage } from "../explorer/explorer";
+import { ChatPage }     from "../chat/chat";
+import { ProfilePage }  from "../profile/profile";
 
 @Component({
   templateUrl: 'tabs.html'
