@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {HomePage} from "../home/home";
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {SignupPage} from "../signup/signup";
+import {TabsPage} from "../tabs/tabs";
 
 @IonicPage()
 @Component({
@@ -16,17 +10,19 @@ import {HomePage} from "../home/home";
 })
 export class LoginPage {
 
-  public backgroundImage = 'assets/imgs/background/homework.jpg';
+  public backgroundImage = 'assets/imgs/background/bluetexture.jpg';
+  public logoImage       = 'assets/imgs/logo/angular.png';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams) {
   }
 
     login() {
-      this.navCtrl.push(HomePage);
+      this.navCtrl.setRoot(TabsPage);
     }
 
     goToSignup() {
-        // this.navCtrl.push(SignupPage);
+        this.navCtrl.push(SignupPage);
     }
 
     goToResetPassword() {

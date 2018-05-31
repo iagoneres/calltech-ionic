@@ -9,6 +9,7 @@ import { ChatPage }      from "../pages/chat/chat";
 import { ProfilePage }   from "../pages/profile/profile";
 import { IntroPage }     from "../pages/intro/intro";
 import { LoginPage }     from "../pages/login/login";
+import { SignupPage }    from "../pages/signup/signup";
 import { TabsPage }      from '../pages/tabs/tabs';
 
 import { StatusBar }          from '@ionic-native/status-bar';
@@ -17,7 +18,8 @@ import { ExplorerPageModule } from "../pages/explorer/explorer.module";
 import { ChatPageModule }     from "../pages/chat/chat.module";
 import { ProfilePageModule }  from "../pages/profile/profile.module";
 import { IntroPageModule }    from "../pages/intro/intro.module";
-import {LoginPageModule} from "../pages/login/login.module";
+import { LoginPageModule }    from "../pages/login/login.module";
+import { SignupPageModule }   from "../pages/signup/signup.module";
 
 @NgModule({
   declarations: [
@@ -32,10 +34,12 @@ import {LoginPageModule} from "../pages/login/login.module";
     ChatPageModule,
     ProfilePageModule,
     IntroPageModule,
-    LoginPageModule
+    LoginPageModule,
+    SignupPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    TabsPage,
     MyApp,
     HomePage,
     ExplorerPage,
@@ -43,7 +47,7 @@ import {LoginPageModule} from "../pages/login/login.module";
     ProfilePage,
     IntroPage,
     LoginPage,
-    TabsPage
+    SignupPage
   ],
   providers: [
     StatusBar,
