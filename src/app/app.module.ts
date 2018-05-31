@@ -3,12 +3,13 @@ import { BrowserModule }                            from '@angular/platform-brow
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp }                                    from './app.component';
 
-import { HomePage }     from '../pages/home/home';
+import { HomePage }      from '../pages/home/home';
 import { ExplorerPage }  from "../pages/explorer/explorer";
 import { ChatPage }      from "../pages/chat/chat";
 import { ProfilePage }   from "../pages/profile/profile";
 import { IntroPage }     from "../pages/intro/intro";
-import { TabsPage }     from '../pages/tabs/tabs';
+import { LoginPage }     from "../pages/login/login";
+import { TabsPage }      from '../pages/tabs/tabs';
 
 import { StatusBar }          from '@ionic-native/status-bar';
 import { SplashScreen }       from '@ionic-native/splash-screen';
@@ -16,6 +17,7 @@ import { ExplorerPageModule } from "../pages/explorer/explorer.module";
 import { ChatPageModule }     from "../pages/chat/chat.module";
 import { ProfilePageModule }  from "../pages/profile/profile.module";
 import { IntroPageModule }    from "../pages/intro/intro.module";
+import {LoginPageModule} from "../pages/login/login.module";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { IntroPageModule }    from "../pages/intro/intro.module";
     ExplorerPageModule,
     ChatPageModule,
     ProfilePageModule,
-    IntroPageModule
+    IntroPageModule,
+    LoginPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,6 +42,7 @@ import { IntroPageModule }    from "../pages/intro/intro.module";
     ChatPage,
     ProfilePage,
     IntroPage,
+    LoginPage,
     TabsPage
   ],
   providers: [
