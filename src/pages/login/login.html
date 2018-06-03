@@ -9,19 +9,19 @@
       <ion-col>
         <ion-list inset class="no-border">
           <ion-item>
-            <ion-label>Username</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label>Usuário</ion-label>
+            <ion-input type="text" [(ngModel)]="authParams.username"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label>Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-label>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="authParams.password"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <button ion-button class="login-button" (click)="login()">Login</button>
+        <button ion-button class="login-button" (click)="login()">Entrar</button>
       </ion-col>
     </ion-row>
     <ion-row>
