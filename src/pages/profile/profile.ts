@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController, LoadingController, App} from 'ionic-angular';
 
 import {Storage}                from '@ionic/storage';
 
 import {LoginPage}              from "../login/login";
 import {AuthenticationProvider} from "../../providers/authentication/authentication";
+import {TabsPage} from "../tabs/tabs";
 
 @IonicPage()
 @Component({
@@ -30,7 +31,10 @@ export class ProfilePage {
         imageUrl: 'assets/imgs/marty-avatar.png'
     };
 
-    constructor(public navCtrl: NavController,
+    token: string;
+
+    constructor(public app: App,
+                public navCtrl: NavController,
                 public navParams: NavParams,
                 public toastCtrl: ToastController,
                 private storage: Storage,
@@ -44,18 +48,29 @@ export class ProfilePage {
             content: 'Please wait...'
         });
 
-        const toast = this.toastCtrl.create({
-            message: 'Não foi possível realizar o login, verifique os dados informados!',
+        const toastSuccess = this.toastCtrl.create({
+            message: 'Usuário deslogado com sucesso!',
             position: 'top',
             duration: 5000
         });
 
-        this.authService.userAuthenticated().subscribe(
-            res    => {
-                console.log(res);
+        const toastError = this.toastCtrl.create({
+            message: 'Não foi possível realizar o logoff, verifique sua rede',
+            position: 'top',
+            duration: 5000
+        });
+
+        loading.present();
+
+        this.authService.revokeToken(this.token).subscribe(
+            res => {
+                loading.dismissAll();
+                this.app.getRootNav().setRoot(LoginPage);
+                toastSuccess.present();
             },
             error => {
-                console.log(error);
+                loading.dismissAll();
+                toastError.present();
             }
         )
     }
@@ -76,7 +91,14 @@ export class ProfilePage {
     }
 
     ionViewDidLoad() {
-
+        this.authService.getAuthorization()
+            .then(
+                value => {
+                    this.token = value;
+                })
+            .then(() => {
+                    this.authService.userAuthenticated(this.token);
+                }
+            );
     }
-
 }
