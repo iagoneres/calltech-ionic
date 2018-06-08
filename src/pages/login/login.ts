@@ -15,7 +15,7 @@ import {AuthenticationProvider} from "../../providers/authentication/authenticat
 
 export class LoginPage {
 
-    public backgroundImage: string  = 'assets/imgs/background/bluetexture.jpg';
+    // public backgroundImage: string  = 'assets/imgs/background/bluetexture.jpg';
     public logoImage: string        = 'assets/imgs/logo/angular.png';
     public authParams               = {
         "grant_type": "password",

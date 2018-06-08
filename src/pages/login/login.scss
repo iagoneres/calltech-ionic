@@ -1,11 +1,17 @@
 page-login {
   // Fullscreen centered image background
   ion-content {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-color: transparent;
+    //background-size: cover;
+    //background-position: center;
+    //background-repeat: no-repeat;
+    //border-color: transparent;
   }
+
+  .master{
+    background-color: #74b9ff;
+  }
+
+
   .scroll-content {
     background-image: radial-gradient(center center, ellipse cover, #ffeda3, #ffc800);
     display: flex;
