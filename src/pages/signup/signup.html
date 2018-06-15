@@ -13,27 +13,27 @@
                 <ion-list class="singup-form">
                     <ion-item>
                         <ion-label floating>Nome</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-input type="text" [(ngModel)]="params.name"></ion-input>
                     </ion-item>
 
                     <ion-item>
                         <ion-label floating>Data de Nascimento</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-input type="text" [(ngModel)]="params.birthdate"></ion-input>
                     </ion-item>
 
                     <ion-item>
                         <ion-label floating>CPF</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-input type="text" [(ngModel)]="params.cpf_cnpj"></ion-input>
                     </ion-item>
 
                     <ion-item>
                         <ion-label floating>Email</ion-label>
-                        <ion-input type="email"></ion-input>
+                        <ion-input type="email" [(ngModel)]="params.email"></ion-input>
                     </ion-item>
 
                     <ion-item>
                         <ion-label floating>Senha</ion-label>
-                        <ion-input type="password"></ion-input>
+                        <ion-input type="password" [(ngModel)]="params.password"></ion-input>
                     </ion-item>
                 </ion-list>
             </ion-col>
@@ -45,7 +45,7 @@
             </ion-col>
 
             <ion-col>
-                <button ion-button class="create-button">Cadastrar</button>
+                <button ion-button class="create-button" (click)="createUser()">Cadastrar</button>
             </ion-col>
         </ion-row>
     </div>
