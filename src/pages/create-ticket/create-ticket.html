@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Criar Ticket</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="masters">
+  <div padding>
+    <ion-row>
+      <ion-col>
+        <ion-list class="singup-form">
+          <ion-item>
+            <ion-label fixed>Título</ion-label>
+            <ion-input type="text" [(ngModel)]="params.title"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-textarea [(ngModel)]="params.description" placeholder="Descreva seu problema"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Categoria</ion-label>
+            <ion-select [(ngModel)]="params.category">
+              <ion-option value="0">Hardware</ion-option>
+              <ion-option value="1">Software</ion-option>
+              <ion-option value="2">Manutenção</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Dificuldade</ion-label>
+            <ion-select [(ngModel)]="params.level">
+              <ion-option value="0">Iniciante</ion-option>
+              <ion-option value="1">Intermediário</ion-option>
+              <ion-option value="2">Avançado</ion-option>
+            </ion-select>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col>
+        <button ion-button class="cancel-button" (click)="cancel()">Cancelar</button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button class="create-button" (click)="createTicket()">Criar</button>
+      </ion-col>
+    </ion-row>
+  </div>

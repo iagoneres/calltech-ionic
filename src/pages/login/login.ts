@@ -20,7 +20,7 @@ export class LoginPage {
     public authParams               = {
         "grant_type": "password",
         "client_id": "2",
-        "client_secret": "35LbweIRyl1Z1ljfWifDa99pnD32UhlOxdtk1OU0",
+        "client_secret": "GG87E6SsWRAV0h5woCoAgHx7NYa4yOx7qU0Io9Ha",
         "username": "",
         "password": "",
         "scope": "*"

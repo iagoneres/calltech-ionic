@@ -26,6 +26,8 @@ import {SignupPageModule}   from "../pages/signup/signup.module";
 
 import {UserProvider}           from '../providers/user/user';
 import {AuthenticationProvider} from "../providers/authentication/authentication";
+import {CreateTicketPage} from "../pages/create-ticket/create-ticket";
+import {CreateTicketPageModule} from "../pages/create-ticket/create-ticket.module";
 
 @NgModule({
     declarations: [
@@ -43,6 +45,7 @@ import {AuthenticationProvider} from "../providers/authentication/authentication
         IntroPageModule,
         LoginPageModule,
         SignupPageModule,
+        CreateTicketPageModule,
         HttpClientModule,
     ],
     bootstrap: [IonicApp],
@@ -55,7 +58,8 @@ import {AuthenticationProvider} from "../providers/authentication/authentication
         ProfilePage,
         IntroPage,
         LoginPage,
-        SignupPage
+        SignupPage,
+        CreateTicketPage,
     ],
     providers: [
         StatusBar,

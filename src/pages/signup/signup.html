@@ -12,28 +12,45 @@
             <ion-col>
                 <ion-list class="singup-form">
                     <ion-item>
-                        <ion-label floating>Nome</ion-label>
+                        <ion-label fixed>Nome</ion-label>
                         <ion-input type="text" [(ngModel)]="params.name"></ion-input>
                     </ion-item>
 
                     <ion-item>
-                        <ion-label floating>Data de Nascimento</ion-label>
-                        <ion-input type="text" [(ngModel)]="params.birthdate"></ion-input>
+                        <ion-label>Date</ion-label>
+                        <ion-datetime displayFormat="DD/MM//YYYY" [(ngModel)]="params.birthdate"></ion-datetime>
                     </ion-item>
 
                     <ion-item>
-                        <ion-label floating>CPF</ion-label>
+                        <ion-label fixed>CPF</ion-label>
                         <ion-input type="text" [(ngModel)]="params.cpf_cnpj"></ion-input>
                     </ion-item>
 
                     <ion-item>
-                        <ion-label floating>Email</ion-label>
+                        <ion-label>Gênero</ion-label>
+                        <ion-select [(ngModel)]="params.gender">
+                            <ion-option value="F">Feminino</ion-option>
+                            <ion-option value="M">Masculino</ion-option>
+                            <ion-option value="X">Não informar</ion-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label fixed>Email</ion-label>
                         <ion-input type="email" [(ngModel)]="params.email"></ion-input>
                     </ion-item>
 
                     <ion-item>
-                        <ion-label floating>Senha</ion-label>
+                        <ion-label fixed>Senha</ion-label>
                         <ion-input type="password" [(ngModel)]="params.password"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Tipo</ion-label>
+                        <ion-select [(ngModel)]="params.type">
+                            <ion-option value="0">Cliente</ion-option>
+                            <ion-option value="1">Especialista</ion-option>
+                        </ion-select>
                     </ion-item>
                 </ion-list>
             </ion-col>

@@ -25,18 +25,18 @@ export class IntroPage {
 
   public slides: Array<any> = [
       {
-          title: "Welcome to the Docs!",
-          description: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
+          title: "Bem-vindo ao CallTech!",
+          description: "Com <b>CallTech</b> você pode criar tickets para as certas possam resolver seus problemas.",
           image: "assets/imgs/ica-slidebox-img-1.png",
       },
       {
-          title: "What is Ionic?",
-          description: "<b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.",
+          title: "Precisando de uma renda extra?",
+          description: "<b>CallTech</b> também pode ser uma forma de ganhar uma renda extra e auxiliar na resolução de problemas de outras pessoas",
           image: "assets/imgs/ica-slidebox-img-2.png",
       },
       {
-          title: "What is Ionic Cloud?",
-          description: "The <b>Ionic Cloud</b> is a cloud platform for managing and scaling Ionic apps with integrated services like push notifications, native builds, user auth, and live updating.",
+          title: "O que é o CallTech?",
+          description: "O <b>CallTech</b> é a plataforma mais moderna para encontrar pessoas que podem auxiliar você ou onde você pode auxiliar outras pessoas e ainda ganhar uma renda extra.",
           image: "assets/imgs/ica-slidebox-img-3.png",
       },
   ];

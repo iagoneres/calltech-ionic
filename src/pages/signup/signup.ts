@@ -16,6 +16,8 @@ export class SignupPage {
         "email": "",
         "birthdate": "",
         "password": "",
+        "gender": "",
+        "type": ""
     };
 
     constructor(public navCtrl: NavController,

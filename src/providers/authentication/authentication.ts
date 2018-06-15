@@ -27,14 +27,10 @@ export class AuthenticationProvider {
         return this.http.post(this.baseUrl + "/oauth/token", authParams);
     }
 
-    public userAuthenticated(token: string) {
+    public userAuthenticated(token: string): Observable<any> {
         return this.http.get(this.baseUrl + "/api/user/authenticated", {
             headers: new HttpHeaders().set('Accept', 'application/json').set('Authorization', token),
-        }).subscribe(
-            user => {
-                this.user = user;
-            },
-        );
+        })
     }
 
     public revokeToken(token): Observable<any>{

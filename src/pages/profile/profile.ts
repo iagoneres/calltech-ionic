@@ -5,7 +5,6 @@ import {Storage}                from '@ionic/storage';
 
 import {LoginPage}              from "../login/login";
 import {AuthenticationProvider} from "../../providers/authentication/authentication";
-import {TabsPage} from "../tabs/tabs";
 
 @IonicPage()
 @Component({
