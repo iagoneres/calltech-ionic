@@ -1,22 +1,17 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {AuthenticationProvider} from "../../providers/authentication/authentication";
-
-/**
- * Generated class for the CreateTicketPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {TicketsProvider} from "../../providers/tickets/tickets";
 
 @IonicPage()
 @Component({
-  selector: 'page-create-ticket',
-  templateUrl: 'create-ticket.html',
+    selector: 'page-create-ticket',
+    templateUrl: 'create-ticket.html',
 })
 export class CreateTicketPage {
 
     public params = {
+        "user_id": 1,
         "title": "",
         "description": "",
         "category": "",
@@ -25,29 +20,60 @@ export class CreateTicketPage {
 
     token: string;
 
-  constructor(public navCtrl: NavController,
-              private authService: AuthenticationProvider,
-              public navParams: NavParams) {
-  }
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
+                private authService: AuthenticationProvider,
+                private loadingCtrl: LoadingController,
+                private toastCtrl: ToastController,
+                private ticketsService: TicketsProvider) {
+    }
 
-  ionViewDidLoad() {
-      this.authService.getAuthorization()
-          .then(
-              value => {
-                  this.token = value;
-              })
-          .then(() => {
-                  this.authService.userAuthenticated(this.token);
-              }
-          );
-  }
+    ionViewDidLoad() {
+        this.authService.getAuthorization()
+            .then(
+                value => {
+                    this.token = value;
+                    console.log(this.token);
+                })
+            .then(() => {
+                    this.authService.userAuthenticated(this.token);
+                }
+            );
+    }
 
-  public createTicket() {
+    public createTicket() {
+        let loading = this.loadingCtrl.create({
+            content: 'Por favor aguarde...'
+        });
 
-  }
+        const toastError = this.toastCtrl.create({
+            message: 'Não foi possível criar o ticket, verifique os dados informados!',
+            position: 'top',
+            duration: 5000
+        });
 
-  public cancel() {
-      this.navCtrl.pop();
-  }
+        const toastSuccess = this.toastCtrl.create({
+            message: 'Ticket criado com sucesso',
+            position: 'top',
+            duration: 3000
+        });
+        console.log(this.params);
+        this.ticketsService.createTicket(this.params, this.token).subscribe(
+            res => {
+                loading.dismissAll();
+                this.navCtrl.pop();
+                toastSuccess.present();
+
+            },
+            error => {
+                loading.dismissAll();
+                toastError.present();
+            }
+        );
+    }
+
+    public cancel() {
+        this.navCtrl.pop();
+    }
 
 }

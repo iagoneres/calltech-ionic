@@ -5,7 +5,7 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class UserProvider {
 
-  private baseUrl = "http://app.calltech.test/api/user";
+  private baseUrl = "http://127.0.0.1:8000/api/user";
 
   constructor(public http: HttpClient) {
     console.log('Hello UserProvider Provider');

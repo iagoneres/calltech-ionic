@@ -16,6 +16,8 @@ import {IntroPage}      from "../pages/intro/intro";
 import {LoginPage}      from "../pages/login/login";
 import {SignupPage}     from "../pages/signup/signup";
 import {TabsPage}       from '../pages/tabs/tabs';
+import {CreateTicketPage} from "../pages/create-ticket/create-ticket";
+import {ListTicketsPage} from "../pages/list-tickets/list-tickets";
 
 import {ExplorerPageModule} from "../pages/explorer/explorer.module";
 import {ChatPageModule}     from "../pages/chat/chat.module";
@@ -23,11 +25,12 @@ import {ProfilePageModule}  from "../pages/profile/profile.module";
 import {IntroPageModule}    from "../pages/intro/intro.module";
 import {LoginPageModule}    from "../pages/login/login.module";
 import {SignupPageModule}   from "../pages/signup/signup.module";
+import {CreateTicketPageModule} from "../pages/create-ticket/create-ticket.module";
+import {ListTicketsPageModule} from "../pages/list-tickets/list-tickets.module";
 
 import {UserProvider}           from '../providers/user/user';
+import { TicketsProvider } from '../providers/tickets/tickets';
 import {AuthenticationProvider} from "../providers/authentication/authentication";
-import {CreateTicketPage} from "../pages/create-ticket/create-ticket";
-import {CreateTicketPageModule} from "../pages/create-ticket/create-ticket.module";
 
 @NgModule({
     declarations: [
@@ -46,6 +49,7 @@ import {CreateTicketPageModule} from "../pages/create-ticket/create-ticket.modul
         LoginPageModule,
         SignupPageModule,
         CreateTicketPageModule,
+        ListTicketsPageModule,
         HttpClientModule,
     ],
     bootstrap: [IonicApp],
@@ -60,6 +64,7 @@ import {CreateTicketPageModule} from "../pages/create-ticket/create-ticket.modul
         LoginPage,
         SignupPage,
         CreateTicketPage,
+        ListTicketsPage,
     ],
     providers: [
         StatusBar,
@@ -67,6 +72,7 @@ import {CreateTicketPageModule} from "../pages/create-ticket/create-ticket.modul
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         UserProvider,
         AuthenticationProvider,
+        TicketsProvider,
     ]
 })
 export class AppModule {
